@@ -1,9 +1,20 @@
-import './App.css'
+import "./App.css";
 
-function App() {
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
+import routes from "virtual:generated-pages-react";
+
+const Routes = () => {
+  return useRoutes(routes);
+};
+
+const App = () => {
   return (
-    <h1>Hello World</h1>
-  )
-}
+    <Router>
+      <Routes />
+    </Router>
+  );
+};
 
-export default App
+export default App;
