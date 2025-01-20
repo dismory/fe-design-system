@@ -2,10 +2,13 @@
   --color-white: #fff;
 
   --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
   --color-neutral-400: #a3a3a3;
   --color-neutral-600: #525252;
   --color-neutral-900: #171717;
 
   --color-indigo-700: #4338ca;
   --color-indigo-800: #3730a3;
+
+  --color-red-600: #dc2626;
 }
