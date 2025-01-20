@@ -1,13 +1,13 @@
 import styles from "./Badge.module.css";
 import clsx from "clsx";
 
-export const BADGE_SIZES = {
+const BADGE_SIZES = {
   SMALL: "sm",
   MEDIUM: "md",
   LARGE: "lg",
 };
 
-export const BADGE_COLORS = {
+const BADGE_COLORS = {
   NEUTRAL: "neutral",
   DANGER: "danger",
   WARNING: "warning",
@@ -34,3 +34,4 @@ function Badge({
 }
 
 export default Badge;
+export { BADGE_COLORS, BADGE_SIZES };
