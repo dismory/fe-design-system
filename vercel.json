@@ -1,12 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/badge",
-      "destination": "/demos/badge.html"
-    },
-    {
-      "source": "/demos/:path*",
-      "destination": "/demos/:path*"
-    }
-  ]
+  "rewrites": []
 }
