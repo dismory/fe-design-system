@@ -1,7 +1,7 @@
 .button {
   border-radius: 4px;
 
-  color: white;
+  color: var(--color-white);
 
   display: flex;
   align-items: center;
@@ -62,21 +62,21 @@
 .button--color--primary {
   border: none;
 
-  color: var(--tw-color-white);
-  background-color: var(--tw-color-indigo-700);
+  color: var(--color-white);
+  background-color: var(--color-indigo-700);
 }
 .button--color--primary:hover {
-  background-color: var(--tw-color-indigo-800);
+  background-color: var(--color-indigo-800);
 }
 .button--color--primary:focus {
-  background-color: var(--tw-color-indigo-800);
+  background-color: var(--color-indigo-800);
 }
 .button--color--primary:disabled {
-  color: var(--tw-color-neutral-400);
-  background-color: var(--tw-color-neutral-100);
+  color: var(--color-neutral-400);
+  background-color: var(--color-neutral-100);
 }
 .button--color--primary:disabled:hover {
-  background-color: var(--tw-color-neutral-100);
+  background-color: var(--color-neutral-100);
 }
 
 /* Button Icon Size */
