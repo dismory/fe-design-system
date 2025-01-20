@@ -46,23 +46,15 @@
 /* Button Size with Icon Only */
 .button--size--md.button--icon-only {
   padding: 10px;
-  /* width: 40px;
-  height: 40px; */
 }
 .button--size--lg.button--icon-only {
   padding: 12px;
-  /* width: 44px;
-  height: 44px; */
 }
 .button--size--xl.button--icon-only {
   padding: 14px;
-  /* width: 48px;
-  height: 48px; */
 }
 .button--size--2xl.button--icon-only {
   padding: 16px;
-  /* width: 56px;
-  height: 56px; */
 }
 
 /* Button Colors */
