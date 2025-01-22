@@ -56,8 +56,6 @@ function Button({
         styles[`button--color--${color}`],
         {
           [styles["button--icon-only"]]: !title && iconUrl,
-          [styles["button--icon-position--right"]]:
-            title && iconUrl && iconPosition === BUTTON_ICON_POSITIONS.RIGHT,
         }
       )}
     >

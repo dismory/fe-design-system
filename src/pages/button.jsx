@@ -10,21 +10,37 @@ function ButtonPage() {
   return (
     <div className="container">
       <div className="button__colors">
-        <div className="button__sizes">
-          <Button size={BUTTON_SIZES.MEDIUM} title="Button CTA" />
-          <Button
-            size={BUTTON_SIZES.LARGE}
-            title="Button CTA"
-            iconUrl={starUrl}
-          />
-          <Button
-            size={BUTTON_SIZES.XLARGE}
-            title="Button CTA"
-            iconUrl={starUrl}
-          />
-          <Button size={BUTTON_SIZES["2XLARGE"]} title="Button CTA" />
-          <Button size={BUTTON_SIZES["2XLARGE"]} iconUrl={starUrl} />
-        </div>
+        {Object.values(BUTTON_COLORS).map((color) => (
+          <div className="button__sizes">
+            <Button
+              size={BUTTON_SIZES.MEDIUM}
+              title="Button CTA"
+              color={color}
+            />
+            <Button
+              size={BUTTON_SIZES.LARGE}
+              title="Button CTA"
+              iconUrl={starUrl}
+              color={color}
+            />
+            <Button
+              size={BUTTON_SIZES.XLARGE}
+              title="Button CTA"
+              iconUrl={starUrl}
+              color={color}
+            />
+            <Button
+              size={BUTTON_SIZES["2XLARGE"]}
+              title="Button CTA"
+              color={color}
+            />
+            <Button
+              size={BUTTON_SIZES["2XLARGE"]}
+              iconUrl={starUrl}
+              color={color}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
