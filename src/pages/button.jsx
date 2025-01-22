@@ -46,6 +46,13 @@ function ButtonPage() {
               color={color}
               iconPosition={BUTTON_ICON_POSITIONS.CENTER}
             />
+            <Button
+              size={BUTTON_SIZES["2XLARGE"]}
+              icons={[RiStarLine]}
+              color={color}
+              iconPosition={BUTTON_ICON_POSITIONS.CENTER}
+              disabled={true}
+            />
           </div>
         ))}
       </div>

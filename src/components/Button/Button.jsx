@@ -34,18 +34,16 @@ function Button({
   disabled = false,
 }) {
   const [LeftIcon, RightIcon] = icons ? icons : [];
+  const isIconOnly =
+    !title && ((LeftIcon && !RightIcon) || (RightIcon && !LeftIcon));
 
   return (
     <button
       disabled={disabled}
       className={clsx(
         styles.button,
-        styles[`button--size--${size}`],
+        styles[`${isIconOnly ? "button-icon" : "button"}--size--${size}`],
         styles[`button--color--${color}`],
-        {
-          [styles["button--icon-only"]]:
-            !title && ((LeftIcon && !RightIcon) || (RightIcon && !LeftIcon)),
-        },
         {
           [styles["button--icon-position--right"]]:
             title &&
