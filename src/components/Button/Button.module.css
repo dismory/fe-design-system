@@ -189,6 +189,9 @@
 
   background-color: transparent;
 }
+.button--color--link-color.button--icon-only {
+  padding: 0;
+}
 .button--color--link-color:hover {
   color: var(--text-indigo-800);
 }
@@ -208,6 +211,9 @@
   color: var(--text-neutral-900);
 
   background-color: transparent;
+}
+.button--color--link-gray.button--icon-only {
+  padding: 0;
 }
 .button--color--link-gray:hover {
   color: var(--text-neutral-900);
