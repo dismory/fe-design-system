@@ -10,6 +10,10 @@
   gap: 8px;
 }
 
+.button--icon-position--right {
+  flex-direction: row-reverse;
+}
+
 .button:hover {
   cursor: pointer;
 }

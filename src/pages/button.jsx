@@ -1,8 +1,11 @@
 import "./button.css";
-import { Button, BUTTON_SIZES, BUTTON_COLORS } from "../components/Button";
 import useTitle from "../hooks/useTitle";
-
-import starUrl from "../assets/icons/star-line.svg?url";
+import {
+  Button,
+  BUTTON_SIZES,
+  BUTTON_COLORS,
+  BUTTON_ICON_POSITIONS,
+} from "../components/Button";
 
 function ButtonPage() {
   useTitle("Button Component");
@@ -11,34 +14,29 @@ function ButtonPage() {
     <div className="container">
       <div className="button__colors">
         {Object.values(BUTTON_COLORS).map((color) => (
-          <div className="button__sizes">
+          <div key={color} className="button__sizes">
             <Button
               size={BUTTON_SIZES.MEDIUM}
-              title="Button CTA"
               color={color}
+              title="Button CTA"
             />
             <Button
               size={BUTTON_SIZES.LARGE}
-              title="Button CTA"
-              iconUrl={starUrl}
               color={color}
+              title="Button CTA"
             />
             <Button
               size={BUTTON_SIZES.XLARGE}
-              title="Button CTA"
-              iconUrl={starUrl}
               color={color}
+              title="Button CTA"
+              iconPosition={BUTTON_ICON_POSITIONS.RIGHT}
             />
             <Button
               size={BUTTON_SIZES["2XLARGE"]}
+              color={color}
               title="Button CTA"
-              color={color}
             />
-            <Button
-              size={BUTTON_SIZES["2XLARGE"]}
-              iconUrl={starUrl}
-              color={color}
-            />
+            <Button size={BUTTON_SIZES["2XLARGE"]} color={color} />
           </div>
         ))}
       </div>
