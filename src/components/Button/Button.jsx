@@ -1,7 +1,6 @@
 import styles from "./Button.module.css";
 
 import clsx from "clsx";
-import { RiStarLine } from "react-icons/ri";
 
 const BUTTON_SIZES = {
   MEDIUM: "md",
@@ -33,7 +32,7 @@ function Button({
   icons,
   iconPosition = BUTTON_ICON_POSITIONS.CENTER,
 }) {
-  const [LeftIcon = RiStarLine, RightIcon] = icons ? icons : [];
+  const [LeftIcon, RightIcon] = icons ? icons : [];
 
   return (
     <button
