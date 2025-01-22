@@ -31,11 +31,13 @@ function Button({
   title,
   icons,
   iconPosition = BUTTON_ICON_POSITIONS.CENTER,
+  disabled = false,
 }) {
   const [LeftIcon, RightIcon] = icons ? icons : [];
 
   return (
     <button
+      disabled={disabled}
       className={clsx(
         styles.button,
         styles[`button--size--${size}`],
