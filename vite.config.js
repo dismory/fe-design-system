@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     pages({
       dirs: "src/pages",
-      extensions: ["jsx", "js"],
+      extensions: ["jsx", "js", "tsx", "ts"],
     }),
   ],
 
