@@ -13,7 +13,7 @@ interface TextInputProps {
 
   onChange?: (text: string) => void;
 
-  leadingIcon?: React.ComponentType<{ className: string }>;
+  leadingIcon?: React.FC<{ className: string }>;
   placeholder?: string;
   hint?: string;
   error?: string;
