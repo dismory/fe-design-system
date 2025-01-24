@@ -51,6 +51,7 @@
 }
 
 .text-input__icon {
+  color: var(--text-neutral-400);
 }
 .text-input__icon--leading {
   width: 20px;
@@ -61,8 +62,6 @@
   height: 16px;
 
   cursor: pointer;
-
-  color: var(--text-neutral-400);
 }
 .text-input__icon--error {
   color: var(--text-red-600);

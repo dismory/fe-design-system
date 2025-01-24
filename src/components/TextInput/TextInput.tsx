@@ -13,12 +13,14 @@ interface TextInputProps {
 
   onChange?: (text: string) => void;
 
-  leadingIcon?: React.FC;
+  leadingIcon?: React.ComponentType<{ className: string }>;
   placeholder?: string;
   hint?: string;
   error?: string;
   help?: string;
   helpOnError?: string;
+
+  disabled?: boolean;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -31,6 +33,7 @@ const TextInput: React.FC<TextInputProps> = ({
   hint,
   error,
   help = "Tooltip when hovering on help icon",
+  disabled = false,
 }) => {
   const [text, setText] = useState<string>(value);
   const id = useId();
@@ -51,7 +54,14 @@ const TextInput: React.FC<TextInputProps> = ({
       <label htmlFor={id}>{label}</label>
 
       <div className={clsx(styles["text-input__input-wrapper"])}>
-        {LeadingIcon && <LeadingIcon />}
+        {LeadingIcon && (
+          <LeadingIcon
+            className={clsx(
+              styles["text-input__icon"],
+              styles["text-input__icon--leading"]
+            )}
+          />
+        )}
         <input
           className={clsx(styles["text-input__input"])}
           type="text"
@@ -61,10 +71,12 @@ const TextInput: React.FC<TextInputProps> = ({
           name={name}
           aria-label={label}
           id={id}
+          disabled={disabled}
         />
         {help && (
           <RiQuestionLine
             className={clsx(
+              styles["text-input__icon"],
               styles["text-input__icon--trailing"],
               error && styles["text-input__icon--error"]
             )}
