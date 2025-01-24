@@ -18,6 +18,14 @@ function TextInputPage() {
           hint="This is a hint text."
           placeholder="name@email.com"
         />
+
+        <TextInput
+          value="name@email.com"
+          name="Email"
+          label="Email"
+          placeholder="name@email.com"
+          error="This is an error message."
+        />
       </div>
     </div>
   );

@@ -47,6 +47,7 @@
   color: var(--text-neutral-500);
 }
 .text-input__message--error {
+  color: var(--text-red-600);
 }
 
 .text-input__icon {
@@ -62,4 +63,7 @@
   cursor: pointer;
 
   color: var(--text-neutral-400);
+}
+.text-input__icon--error {
+  color: var(--text-red-600);
 }

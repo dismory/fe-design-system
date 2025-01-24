@@ -6,15 +6,19 @@ import { RiQuestionLine } from "react-icons/ri";
 import styles from "./TextInput.module.css";
 
 interface TextInputProps {
-  value?: string;
   name: string;
-  onChange?: (text: string) => void;
-  leadingIcon?: React.FC;
+  value?: string;
+
   label: string;
+
+  onChange?: (text: string) => void;
+
+  leadingIcon?: React.FC;
   placeholder?: string;
   hint?: string;
   error?: string;
   help?: string;
+  helpOnError?: string;
 }
 
 const TextInput: React.FC<TextInputProps> = ({
@@ -60,7 +64,10 @@ const TextInput: React.FC<TextInputProps> = ({
         />
         {help && (
           <RiQuestionLine
-            className={clsx(styles["text-input__icon--trailing"])}
+            className={clsx(
+              styles["text-input__icon--trailing"],
+              error && styles["text-input__icon--error"]
+            )}
           />
         )}
       </div>
