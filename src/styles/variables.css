@@ -1,5 +1,8 @@
 :root {
+  --border-neutral-100: #f5f5f5;
   --border-neutral-200: #e5e5e5;
+  --border-indigo-200: #c7d2fe;
+  --border-indigo-600: #4f46e5;
 
   --text-white: #fff;
   --text-neutral-400: #a3a3a3;
@@ -23,5 +26,6 @@
 
   --color-indigo-800: #3730a3;
 
+  --color-red-300: #fca5a5;
   --color-red-600: #dc2626;
 }
