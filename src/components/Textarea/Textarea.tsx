@@ -3,6 +3,7 @@ import styles from "./Textarea.module.css";
 import clsx from "clsx";
 
 interface TextareaProps {
+  className?: string;
   title?: string;
   placeholder?: string;
   maxLength?: number;
@@ -13,11 +14,12 @@ interface TextareaProps {
 
 const Textarea: React.FC<TextareaProps> = ({
   title = "Description",
-  placeholder = "Write your message",
+  placeholder = "Write your message...",
   maxLength,
   errorMessage,
   disabled,
   text,
+  className,
 }) => {
   const id = useId();
   const [length, setLength] = useState(0);
@@ -29,7 +31,7 @@ const Textarea: React.FC<TextareaProps> = ({
   };
 
   return (
-    <div className={styles.textarea}>
+    <div className={clsx(styles.textarea, className)}>
       <div className={styles["textarea__section-header"]}>
         <label htmlFor={id}>{title}</label>
       </div>

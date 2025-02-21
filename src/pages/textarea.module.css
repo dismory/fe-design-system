@@ -8,7 +8,19 @@
   align-items: center;
 }
 
-.textarea-container {
+.textarea-variants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
   width: 340px;
-  height: 180px;
+}
+
+.textarea-variants__textarea {
+  height: 160px;
+}
+
+.textarea-variants__textarea:nth-child(2) {
+  height: 155px;
 }
