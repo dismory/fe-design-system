@@ -24,7 +24,7 @@ const camelCaseName =
   componentName.charAt(0).toLowerCase() + componentName.slice(1);
 
 const COMPONENT_TEMPLATE = `import React from "react";
-
+import clsx from "clsx";
 import styles from "./${pascalCaseName}.module.css";
 
 interface ${pascalCaseName}Props {
@@ -32,7 +32,7 @@ interface ${pascalCaseName}Props {
 }
 
 const ${pascalCaseName}: React.FC<${pascalCaseName}Props> = () => {
-  return <div className={styles.container}>${pascalCaseName} Component</div>;
+  return <div className={styles[${kebabCaseName}]}>${pascalCaseName} Component</div>;
 };
 
 export default ${pascalCaseName};
@@ -44,18 +44,15 @@ const MODULE_CSS_TEMPLATE = `.${kebabCaseName} {
 `;
 
 const PAGE_TEMPLATE = `import React from "react";
-
 import useTitle from "../hooks/useTitle";
-
 import ${pascalCaseName} from "../components/${pascalCaseName}";
-
-import "./${camelCaseName}.css";
+import styles from "./${camelCaseName}.module.css";
 
 function ${pascalCaseName}Page() {
   useTitle("${pascalCaseName} Component");
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <${pascalCaseName} />
     </div>
   );
@@ -104,22 +101,22 @@ async function init() {
 
   await createFile(
     path.join(componentDir, `${pascalCaseName}.tsx`),
-    COMPONENT_TEMPLATE
+    COMPONENT_TEMPLATE,
   );
   await createFile(
     path.join(componentDir, `${pascalCaseName}.module.css`),
-    MODULE_CSS_TEMPLATE
+    MODULE_CSS_TEMPLATE,
   );
   await createFile(path.join(componentDir, "index.tsx"), INDEX_TEMPLATE);
 
   // Create page files
   await createFile(
     path.join("src", "pages", `${camelCaseName}.tsx`),
-    PAGE_TEMPLATE
+    PAGE_TEMPLATE,
   );
   await createFile(
-    path.join("src", "pages", `${camelCaseName}.css`),
-    PAGE_CSS_TEMPLATE
+    path.join("src", "pages", `${camelCaseName}.module.css`),
+    PAGE_CSS_TEMPLATE,
   );
 
   console.log(`\nComponent ${pascalCaseName} initialized successfully!`);
