@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 import styles from "./Textarea.module.css";
 import clsx from "clsx";
 
@@ -19,6 +19,7 @@ const Textarea: React.FC<TextareaProps> = ({
   disabled,
   text,
 }) => {
+  const id = useId();
   const [length, setLength] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -30,10 +31,11 @@ const Textarea: React.FC<TextareaProps> = ({
   return (
     <div className={styles.textarea}>
       <div className={styles["textarea__section-header"]}>
-        <span>{title}</span>
+        <label htmlFor={id}>{title}</label>
       </div>
       <div className={styles["textarea__section-body"]}>
         <textarea
+          id={id}
           className={clsx(styles.textarea__input, {
             [styles["textarea__input_error"]]: !!errorMessage,
           })}
