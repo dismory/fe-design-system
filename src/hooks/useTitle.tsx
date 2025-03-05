@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
 export const useTitle = (title: string) => {
   React.useEffect(() => {
-    document.title = title;
+    document.title = `${title} - Design System`;
   }, [title]);
 };
 
