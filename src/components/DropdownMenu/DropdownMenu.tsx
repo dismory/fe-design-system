@@ -126,7 +126,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({}) => {
       ref={menuRef}
       className={clsx(
         'dropdown-menu',
-        'relative w-[272px] self-start text-sm text-neutral-900'
+        'relative w-[272px] self-start text-sm font-medium text-neutral-900'
       )}
     >
       <DropdownMenuTrigger
