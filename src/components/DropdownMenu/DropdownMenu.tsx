@@ -100,7 +100,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({}) => {
 
     const rect = triggerRef.current.getBoundingClientRect();
     setMenuPosition({
-      top: rect.height + 4,
+      top: rect.height,
       width: rect.width,
     });
   }, []);
@@ -135,9 +135,14 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({}) => {
         onClick={() => setIsOpen(!isOpen)}
       />
 
-      {isOpen && (
+      {
         <DropdownMenuContent
-          className={clsx('absolute top-[4px]')}
+          className={clsx(
+            'absolute z-1',
+            'transition-[opacity,translate] duration-300 ease-initial',
+            isOpen ? 'opacity-100' : 'opacity-0',
+            isOpen ? 'translate-y-[4px]' : 'translate-y-[-10px]'
+          )}
           style={{
             top: `${menuPosition.top}px`,
             width: `${menuPosition.width}px`,
@@ -159,7 +164,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({}) => {
             />
           </DropdownMenuItem>
         </DropdownMenuContent>
-      )}
+      }
     </div>
   );
 };
