@@ -25,14 +25,13 @@ const camelCaseName =
 
 const COMPONENT_TEMPLATE = `import React from "react";
 import clsx from "clsx";
-import styles from "./${pascalCaseName}.module.css";
 
 interface ${pascalCaseName}Props {
   // Add your props here
 }
 
 const ${pascalCaseName}: React.FC<${pascalCaseName}Props> = () => {
-  return <div className={styles[${kebabCaseName}]}>${pascalCaseName} Component</div>;
+  return <div className={"${kebabCaseName}"}>${pascalCaseName} Component</div>;
 };
 
 export default ${pascalCaseName};
@@ -102,10 +101,6 @@ async function init() {
   await createFile(
     path.join(componentDir, `${pascalCaseName}.tsx`),
     COMPONENT_TEMPLATE,
-  );
-  await createFile(
-    path.join(componentDir, `${pascalCaseName}.module.css`),
-    MODULE_CSS_TEMPLATE,
   );
   await createFile(path.join(componentDir, "index.tsx"), INDEX_TEMPLATE);
 
