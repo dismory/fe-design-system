@@ -139,7 +139,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({}) => {
         <DropdownMenuContent
           className={clsx(
             'absolute z-1',
-            'transition-[opacity,translate] duration-300 ease-initial',
+            'transition-[opacity,translate] duration-300 ease-[ease]',
             isOpen ? 'opacity-100' : 'opacity-0',
             isOpen ? 'translate-y-[4px]' : 'translate-y-[-10px]'
           )}
