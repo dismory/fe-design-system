@@ -37,12 +37,7 @@ const ${pascalCaseName}: React.FC<${pascalCaseName}Props> = () => {
 export default ${pascalCaseName};
 `;
 
-const MODULE_CSS_TEMPLATE = `.${kebabCaseName} {
-  /* Add your styles here */
-}
-`;
-
-const PAGE_TEMPLATE = `import React from "react";
+const PAGE_TEMPLATE = `import clsx from "clsx";
 import useTitle from "../hooks/useTitle";
 import ${pascalCaseName} from "../components/${pascalCaseName}";
 
