@@ -45,29 +45,18 @@ const MODULE_CSS_TEMPLATE = `.${kebabCaseName} {
 const PAGE_TEMPLATE = `import React from "react";
 import useTitle from "../hooks/useTitle";
 import ${pascalCaseName} from "../components/${pascalCaseName}";
-import styles from "./${camelCaseName}.module.css";
 
 function ${pascalCaseName}Page() {
   useTitle("${pascalCaseName} Component");
 
   return (
-    <div className={styles.container}>
+    <div className={clsx("flex h-screen w-screen justify-center pt-28")}>
       <${pascalCaseName} />
     </div>
   );
 }
 
 export default ${pascalCaseName}Page;
-`;
-
-const PAGE_CSS_TEMPLATE = `.container {
-  padding-top: 112px;
-  height: 100vh;
-  width: 100vw;
-
-  display: flex;
-  justify-content: center;
-}
 `;
 
 const INDEX_TEMPLATE = `import ${pascalCaseName} from "./${pascalCaseName}";
@@ -108,10 +97,6 @@ async function init() {
   await createFile(
     path.join("src", "pages", `${camelCaseName}.tsx`),
     PAGE_TEMPLATE
-  );
-  await createFile(
-    path.join("src", "pages", `${camelCaseName}.module.css`),
-    PAGE_CSS_TEMPLATE
   );
 
   console.log(`\nComponent ${pascalCaseName} initialized successfully!`);
