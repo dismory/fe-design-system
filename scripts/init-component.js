@@ -100,18 +100,18 @@ async function init() {
 
   await createFile(
     path.join(componentDir, `${pascalCaseName}.tsx`),
-    COMPONENT_TEMPLATE,
+    COMPONENT_TEMPLATE
   );
   await createFile(path.join(componentDir, "index.tsx"), INDEX_TEMPLATE);
 
   // Create page files
   await createFile(
     path.join("src", "pages", `${camelCaseName}.tsx`),
-    PAGE_TEMPLATE,
+    PAGE_TEMPLATE
   );
   await createFile(
     path.join("src", "pages", `${camelCaseName}.module.css`),
-    PAGE_CSS_TEMPLATE,
+    PAGE_CSS_TEMPLATE
   );
 
   console.log(`\nComponent ${pascalCaseName} initialized successfully!`);
