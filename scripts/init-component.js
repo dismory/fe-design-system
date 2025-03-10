@@ -31,7 +31,7 @@ interface ${pascalCaseName}Props {
 }
 
 const ${pascalCaseName}: React.FC<${pascalCaseName}Props> = () => {
-  return <div className={"${kebabCaseName}"}>${pascalCaseName} Component</div>;
+  return <div className={clsx("${kebabCaseName}")}>${pascalCaseName} Component</div>;
 };
 
 export default ${pascalCaseName};
